@@ -1,0 +1,25 @@
+[
+ {
+  "RuleID": "terraform-password",
+  "Description": "Detect Terraform password variables",
+  "StartLine": 65,
+  "EndLine": 65,
+  "StartColumn": 4,
+  "EndColumn": 43,
+  "Match": "admin_password         = \"Sports@123456\"",
+  "Secret": "admin_password",
+  "File": "terraform.tfvars",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.3787835,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [
+   "terraform",
+   "password"
+  ],
+  "Fingerprint": "terraform.tfvars:terraform-password:65"
+ }
+]
