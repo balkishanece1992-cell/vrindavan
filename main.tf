@@ -22,7 +22,7 @@ resource "azurerm_virtual_network" "vnet" {
   name = "bala_vnet"
   location = "eastus"
   resource_group_name = "mala_rg"
-  address_space = [ "10.0.0.1/16" ]
+  address_space = [ "10.0.0.0/16" ]
 }
 resource "azurerm_subnet" "subnet" {
   depends_on = [ azurerm_virtual_network.vnet ]
