@@ -20,17 +20,17 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: ./
+        working-directory: ./bala modules/vrindavan
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: ./
+        working-directory: ./bala modules/vrindavan
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: ./
+        working-directory: ./bala modules/vrindavan
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: ./
+        working-directory: ./bala modules/vrindavan
         run: terraform apply -auto-approve
