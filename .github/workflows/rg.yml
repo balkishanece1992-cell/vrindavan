@@ -1,0 +1,36 @@
+name: Deploy Azure RG
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        working-directory: ./
+        run: terraform init
+
+      - name: Terraform Validate
+        working-directory: ./
+        run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: ./
+        run: terraform plan
+
+      - name: Terraform Apply
+        working-directory: ./
+        run: terraform apply -auto-approve
