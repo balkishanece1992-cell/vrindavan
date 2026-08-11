@@ -14,7 +14,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-    name = "mala_rg"
+    name = "lala_rg"
   location = "eastus"
 }
 resource "azurerm_virtual_network" "vnet" {
